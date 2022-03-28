@@ -6,12 +6,13 @@ import recommendProductsReducer from "./recommendProducts/recommendProductsReduc
 import { productDetailSlice } from './productDetail/slice';
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { productSearchSlice } from './productSearch/slice';
-
+import { UserSlice} from './user/slice'
 const rootReducer = combineReducers({
     language: languageReducer,
     recommendProducts: recommendProductsReducer,
     productDetail: productDetailSlice.reducer,
-    productSearch:productSearchSlice.reducer
+    productSearch:productSearchSlice.reducer,
+    user:UserSlice.reducer
 })
 
 // const store = createStore(rootReducer, applyMiddleware(thunk, actionLog));

@@ -3,9 +3,7 @@ import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
-import {
-	useHistory,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import {
@@ -20,7 +18,8 @@ export const Header: React.FC = () => {
 	const languageList = useSelector((state) => state.language.languageList);
 	const dispatch = useDispatch();
 	const { t } = useTranslation();
-
+	const jwt=useSelector(state=>state.user.token);
+	
 	const menuClickHandle = (e) => {
 		if (e.key === "new") {
 			dispatch(
